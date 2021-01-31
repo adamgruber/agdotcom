@@ -4,6 +4,10 @@
   "description": "adamgruber.com",
   "main": "index.js",
   "scripts": {
+    "build": "npm run clean && npm run build:html && npm run build:css",
+    "build:css": "tailwindcss-cli build ./src/agdotcom.css -o ./public/agdotcom.css",
+    "build:html": "cp ./index.html ./public/.",
+    "clean": "rm -rf ./public && mkdir public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/adamgruber/agdotcom/issues"
   },
-  "homepage": "https://github.com/adamgruber/agdotcom#readme"
+  "homepage": "https://github.com/adamgruber/agdotcom#readme",
+  "devDependencies": {
+    "tailwindcss": "^2.0.2",
+    "tailwindcss-cli": "^0.1.2"
+  }
 }
