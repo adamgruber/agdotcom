@@ -7,7 +7,7 @@
     "build": "npm run clean && npm run build:html && npm run build:css",
     "build:css": "postcss src/agdotcom.css -o public/agdotcom.css",
     "build:html": "cp src/index.html public/index.html",
-    "clean": "rm -rf public && mkdir public",
+    "clean": "rm public/*.{css,html}",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
