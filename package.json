@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run clean && npm run build:html && npm run build:css",
-    "build:css": "tailwindcss-cli build ./src/agdotcom.css -o ./public/agdotcom.css",
-    "build:html": "cp ./src/index.html ./public/index.html",
-    "clean": "rm -rf ./public && mkdir public",
+    "build:css": "postcss src/agdotcom.css -o public/agdotcom.css",
+    "build:html": "cp src/index.html public/index.html",
+    "clean": "rm -rf public && mkdir public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +21,10 @@
   },
   "homepage": "https://github.com/adamgruber/agdotcom#readme",
   "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "cssnano": "^4.1.10",
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.2",
     "tailwindcss-cli": "^0.1.2"
   }
