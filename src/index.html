@@ -30,11 +30,15 @@
         Ad•am Gru•ber | \ˈa-dəm ˈgrü-bər\
       </h2>
       <ol
-        class="font-light text-md sm:text-2xl text-gray-600 dark:text-gray-400 list-decimal list-inside mb-8 sm:mb-16 ml-4"
+        class="font-light text-md sm:text-2xl text-gray-900 dark:text-gray-200 list-decimal list-inside mb-8 sm:mb-16 ml-4"
       >
-        <li class="mb-3 sm:mb-4">a child of the nineties</li>
-        <li class="mb-3 sm:mb-4">a fan of all things Lego</li>
-        <li class="mb-3 sm:mb-4">a developer making the web awesome</li>
+        <li class="mb-3 sm:mb-4">
+          an experienced developer with an eye for design
+        </li>
+        <li id="fact2" class="mb-3 sm:mb-4">
+          an active member of the open-source community
+        </li>
+        <li id="fact3" class="mb-3 sm:mb-4"></li>
       </ol>
       <h3
         class="font-bold text-lg sm:text-2xl mb-4 text-gray-900 dark:text-gray-200"
@@ -78,5 +82,24 @@
         >
       </section>
     </div>
+    <script type="text/javascript">
+      const facts = [
+        'a child of the nineties',
+        'a collector of all things Lego',
+        'an occasional blogger',
+        'a NJ native living in PA',
+        'a weekend gamer',
+      ];
+
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
+
+      function getFact() {
+        return facts.splice(getRandomInt(facts.length - 1), 1)[0];
+      }
+
+      document.getElementById('fact3').textContent = getFact();
+    </script>
   </body>
 </html>
